@@ -1,7 +1,6 @@
-const NineteenNinetyFiveController = require('../controllers/1995');
+const NineteenNinetyFiveController = require('../controllers/persons');
 
 module.exports = function(app){
-    
     //routes and controllers
     app.get('/', NineteenNinetyFiveController.index);
     // app.get('/', (request, response) => {});

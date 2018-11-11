@@ -10,14 +10,11 @@ module.exports = {
         .catch(error => {
             response.json({ message: "Error", error: error });
         })
-        // Person.find({})
-        // .then(people => response.json(people))
-        // .catch(error => response.json(error));
     },
     show(request, response) {
         Person.findOne({ name: request.params.name })
-        .then(person_db => {
-            const person = person_db;
+        .then(people_db => {
+            const person = people_db;
             response.json(person);
         })
         .catch(error => {
@@ -32,9 +29,6 @@ module.exports = {
         .catch(error => {
             response.json({ message: "Error", error: error });
         })
-        // Person.create(request.params)
-        // .then(person => response.json(person))
-        // .catch(error => response.json(error));
     },
     destroy(request, response) {
         Person.deleteOne({name: request.params.name})
